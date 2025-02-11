@@ -1,0 +1,35 @@
+﻿@model TaskManager.Models.TaskItem
+
+@{
+    ViewData["Title"] = "Task Details";
+}
+
+<h2>@Model.Title</h2>
+
+<div class="d-flex align-items-center">
+    <!-- Edit Icon -->
+    <a asp-controller="Task" asp-action="Edit" asp-route-id="@Model.TaskID" class="btn btn-link p-0 me-3">
+        <i class="bi bi-pencil-fill"></i> Edit
+    </a>
+
+    <!-- Delete Icon -->
+    <a asp-controller="Task" asp-action="Delete" asp-route-id="@Model.TaskID" class="btn btn-link p-0">
+        <i class="bi bi-trash-fill"></i> Delete
+    </a>
+</div>
+
+
+
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Description</h5>
+        <p class="card-text">@Model.Description</p>
+    </div>
+</div>
+
+
+
+<a asp-action="Index" class="btn btn-secondary mt-3">
+    <i class="bi bi-arrow-left-circle-fill"></i> Back to Task List
+</a>
